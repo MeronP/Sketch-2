@@ -2,9 +2,9 @@
 
 Resources and Plugins for Sketch by Bohemian Coding.
 
-* Files you want to use as templates (accessible from File > New from Template) should be moved to ~/Library/Application Support/sketch/Templates/
+* Templates should be moved to `~/Library/Application Support/sketch/Templates/` , and will then be accessible from `File > New from Template`
 
-* Plugins should be moved to ~/Library/Application Support/sketch/Plugins
+* Plugins should be moved to `~/Library/Application Support/sketch/Plugins/` , and will then be accessible from the `Plugins` menu
 
 ##License
 
