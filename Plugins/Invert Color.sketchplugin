@@ -1,0 +1,22 @@
+var layer = selection[0];
+var layerFrame = [layer frame];
+var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
+
+//Get first fill color from all fills
+var fills = [[layer style] fills];
+
+var fillObj = [fills array][0];
+var bgColor = [fillObj color];
+
+//Calculate new inverted color
+var newR = (1-[bgColor red]);
+var newG = (1-[bgColor green]);
+var newB = (1-[bgColor blue]);
+
+//Set the color
+[bgColor setRed:newR];
+[bgColor setGreen:newG];
+[bgColor setBlue:newB];
+
+//Force a redraw
+[layer markLayerDirty];
