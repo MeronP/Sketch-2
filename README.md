@@ -6,6 +6,21 @@ Resources and Plugins for Sketch by Bohemian Coding.
 
 * Plugins should be moved to `~/Library/Application Support/sketch/Plugins/` , and will then be accessible from the `Plugins` menu
 
+##Contents
+
+* Plugins
+	* Fill Artboard
+	* Invert Color
+	* Remove Fills and Borders
+* Resources
+	* Devices
+		* Androids
+		* iMac
+		* iPhone 5c
+		* MacBook Pro with Retina Display
+	* Templates
+		* Android Icon
+		* Mac UI (Window)
 
 ##License
 
