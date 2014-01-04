@@ -21,6 +21,8 @@ Resources and Plugins for Sketch by Bohemian Coding.
 	* Templates
 		* Android Icon
 		* Mac UI (Window)
+	* Framer
+		* "AppTemplate" (iOS UI template with [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js))
 
 ##License
 
