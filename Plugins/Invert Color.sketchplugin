@@ -1,6 +1,4 @@
 var layer = selection[0];
-var layerFrame = [layer frame];
-var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
 
 //Get first fill color from all fills
 var fills = [[layer style] fills];
