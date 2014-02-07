@@ -17,7 +17,7 @@ for (var i = 0; i < [allLayers length]; i++) {
 
 	//If the layer is linked and is definitely a image layer
 	if (layerIsLinked && [layer class] === MSBitmapLayer) {
-		var docFolder = [[doc fileURL] path].toLowerCase().split([doc displayName])[0];
+		var docFolder = [[doc fileURL] path].split([doc displayName])[0];
 		var imagePath = docFolder+[layer name];
 
 		var fileManager = [NSFileManager defaultManager];
