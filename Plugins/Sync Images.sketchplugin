@@ -1,0 +1,32 @@
+var allLayers = [[doc currentPage] layers];
+
+//Loop through layers
+for (var i = 0; i < [allLayers length]; i++) {
+	var layer = allLayers[i];
+
+	//Check if the layer has an image extension (ie. it's linked)
+	var layerIsLinked = false;
+
+	var exts = [".jpeg", ".jpg", ".png", ".tif", ".tiff"];
+	for (var i = 0, len = exts.length; i < len; ++i) {
+	    if ([layer name].indexOf(exts[i]) != -1) {
+	    	layerIsLinked = true;
+	    	break;
+	    }
+	}
+
+	//If the layer is linked and is definitely a image layer
+	if (layerIsLinked && [layer class] === MSBitmapLayer) {
+		var docFolder = [[doc fileURL] path].toLowerCase().split([doc displayName])[0];
+		var imagePath = docFolder+[layer name];
+
+		var fileManager = [NSFileManager defaultManager];
+		if ([fileManager fileExistsAtPath:imagePath]) {
+			//Replace old image with new image, if the layer's name (image path) exists
+			var newImage = [[NSImage alloc] initWithContentsOfFile:imagePath];
+			[layer setImage:newImage];
+		}
+	}
+}
+
+[doc showMessage:"Synced!"];

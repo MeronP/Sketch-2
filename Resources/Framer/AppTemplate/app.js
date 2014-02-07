@@ -137,17 +137,23 @@ PSD.First_Tab.on(pointerType, function() {
 
 
 start = function() {
-	//iPhone screen of right width to clip everything to
+	//Clip everything to iPhone screen, setup view hierarchy
 	iPhoneScreen = new View({ x:0, y:0, width:640, height:1136 })
 	iPhoneScreen.style.overflow = "hidden"
+	iPhoneScreen.style.background = "white"
 
 	PSD.Status_Bar.superView = iPhoneScreen
 	PSD.Main_Screen.superView = iPhoneScreen
 	PSD.Second_Screen.superView = iPhoneScreen
 
-	//Sort out hierarchy
 	PSD.Status_Bar.placeBefore(PSD.Main_Screen)
 	PSD.Second_Screen.placeBefore(PSD.Main_Screen)
+
+	PSD.Nav_Bar.superView = PSD.Content
+	PSD.Tab_Bar.superView = PSD.Content
+
+	PSD.Second_Nav_Bar.superView = PSD.Second_Content
+	PSD.Second_Tab_Bar.superView = PSD.Second_Content
 
 
 	if (utils.isTouch()) {
@@ -155,24 +161,22 @@ start = function() {
 	}
 
 
-	// Don't show status bar for web apps
-	if (isWebApp()) {
-		PSD.Status_Bar.opacity = 0
+	// Don't show status bar for web apps, touchscreen mobiles
+	if (isWebApp() || (utils.isMobile() && utils.isTouch())) {
+		PSD.Status_Bar.style.display = "none"
+		PSD["Content"].y -= 40
 	} else {
-		//PSD["Content"].y += 40
+		//Setup time in status bar
+		statusBarTime = new View({ x:268, y:4, width:115, height:34 })
+		statusBarTime.style = {
+		    "background-color": "transparent",
+		    "color": "black",
+		    "font": "26px Helvetica Neue",
+		    "text-align": "center"
+		}
+		refreshStatusBarTime()
+		utils.interval(1000,refreshStatusBarTime)
 	}
-
-
-	//Setup time in status bar
-	statusBarTime = new View({ x:268, y:4, width:115, height:34 })
-	statusBarTime.style = {
-	    "background-color": "transparent",
-	    "color": "black",
-	    "font": "26px Helvetica Neue",
-	    "text-align": "center"
-	}
-	refreshStatusBarTime()
-	utils.interval(1000,refreshStatusBarTime)
 
 
 	PSD.Second_Screen.x  = 0

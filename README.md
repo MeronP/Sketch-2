@@ -12,6 +12,7 @@ Resources and Plugins for Sketch by Bohemian Coding.
 	* Fill Artboard
 	* Invert Color
 	* Remove Fills and Borders
+	* Sync Images (syncs image layers which are named the same as the file, eg. "image.jpg)
 * Resources
 	* Devices
 		* Androids
