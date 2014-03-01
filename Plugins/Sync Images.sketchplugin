@@ -1,5 +1,8 @@
 var allLayers = [[doc currentPage] layers];
 
+var layersToSync = 0;
+var syncedLayers = 0;
+
 //Loop through layers
 for (var i = 0; i < [allLayers length]; i++) {
 	var layer = allLayers[i];
@@ -17,6 +20,8 @@ for (var i = 0; i < [allLayers length]; i++) {
 
 	//If the layer is linked and is definitely a image layer
 	if (layerIsLinked && [layer class] === MSBitmapLayer) {
+		layersToSync++;
+
 		var docFolder = [[doc fileURL] path].split([doc displayName])[0];
 		var imagePath = docFolder+[layer name];
 
@@ -24,9 +29,28 @@ for (var i = 0; i < [allLayers length]; i++) {
 		if ([fileManager fileExistsAtPath:imagePath]) {
 			//Replace old image with new image, if the layer's name (image path) exists
 			var newImage = [[NSImage alloc] initWithContentsOfFile:imagePath];
-			[layer setImage:newImage];
+
+			if (newImage) {
+				var layerFrame = [layer frame];
+
+				//If image and layer dimensions are different
+				//Make sure layer does not scale proportionally, set new dimensions
+				//Set it back to scaling proportionally
+				if ([layerFrame width] != [newImage size].width || [layerFrame height] != [newImage size].height) {
+					[layerFrame setConstrainProportions:false];
+					[layerFrame setHeight: [newImage size].height];
+					[layerFrame setWidth: [newImage size].width];
+					[layerFrame setConstrainProportions:true];
+				}
+
+				[layer setImage:newImage];
+
+				syncedLayers++;
+			} else {
+				[doc showMessage:@"Failed to sync image: "+imagePath];
+			}
 		}
 	}
 }
 
-[doc showMessage:"Synced!"];
+[doc showMessage:"Synced "+syncedLayers+" of "+layersToSync+" images."];
