@@ -3,23 +3,11 @@ var allLayers = [[doc currentPage] layers];
 var layersToSync = 0;
 var syncedLayers = 0;
 
-//Loop through layers
 for (var i = 0; i < [allLayers length]; i++) {
 	var layer = allLayers[i];
 
-	//Check if the layer has an image extension (ie. it's linked)
-	var layerIsLinked = false;
-
-	var exts = [".jpeg", ".jpg", ".png", ".tif", ".tiff"];
-	for (var i = 0, len = exts.length; i < len; ++i) {
-	    if ([layer name].indexOf(exts[i]) != -1) {
-	    	layerIsLinked = true;
-	    	break;
-	    }
-	}
-
 	//If the layer is linked and is definitely a image layer
-	if (layerIsLinked && [layer class] === MSBitmapLayer) {
+	if ([layer class] === MSBitmapLayer) {
 		layersToSync++;
 
 		var docFolder = [[doc fileURL] path].split([doc displayName])[0];
@@ -34,23 +22,28 @@ for (var i = 0; i < [allLayers length]; i++) {
 				var layerFrame = [layer frame];
 
 				//If image and layer dimensions are different
-				//Make sure layer does not scale proportionally, set new dimensions
-				//Set it back to scaling proportionally
 				if ([layerFrame width] != [newImage size].width || [layerFrame height] != [newImage size].height) {
-					[layerFrame setConstrainProportions:false];
+					[layerFrame setConstrainProportions: false];
 					[layerFrame setHeight: [newImage size].height];
 					[layerFrame setWidth: [newImage size].width];
-					[layerFrame setConstrainProportions:true];
+					[layerFrame setConstrainProportions: true];
 				}
 
 				[layer setImage:newImage];
 
 				syncedLayers++;
-			} else {
-				[doc showMessage:@"Failed to sync image: "+imagePath];
 			}
+		} else {
+			[doc showMessage:"Failed to sync image: "+imagePath];
 		}
 	}
 }
 
-[doc showMessage:"Synced "+syncedLayers+" of "+layersToSync+" images."];
+if (layersToSync == 1) {
+	if (syncedLayers == 1) {
+		[doc showMessage:"Successfully synced image."];
+	}
+	//Otherwise, allow the error message from earlier to show
+} else {
+	[doc showMessage:"Synced "+syncedLayers+" of "+layersToSync+" images."];
+}
