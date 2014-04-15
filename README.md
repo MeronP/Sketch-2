@@ -20,8 +20,9 @@ Resources and Plugins for Sketch by Bohemian Coding.
 		* iPhone 5c
 		* MacBook Pro with Retina Display
 	* Templates
-		* Android Icon
-		* Mac UI (Window)
+		* Android App Icon
+		* Mac UI Design (window)
+		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and example file)
 	* Framer
 		* "AppTemplate" (iOS UI template with [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js))
 
