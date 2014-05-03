@@ -5,16 +5,13 @@ var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
 //Remove all fills
 var fills = [[layer style] fills];
 
-for (var i = 0; i < [fills length]; i++) {
+for (var i = 0; i < [fills count]; i++) {
 	[fills removeStylePartAtIndex:0];
 }
 
 //Remove all borders
 var borders = [[layer style] borders];
 
-for (var i = 0; i < [borders length]; i++) {
+for (var i = 0; i < [borders count]; i++) {
 	[borders removeStylePartAtIndex:0];
 }
-
-//Redraw layer
-[layer markLayerDirty];

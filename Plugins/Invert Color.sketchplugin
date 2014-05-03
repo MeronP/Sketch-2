@@ -1,4 +1,5 @@
-//Invert the (first) background color the first selected layer
+//(control i)
+//Invert the (first) background fill color the first selected layer
 
 var layer = selection[0];
 var layerFrame = [layer frame];
@@ -8,7 +9,14 @@ var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
 var fills = [[layer style] fills];
 
 if (fills) {
-	var fillObj = [fills array][0];
+	var fillObj;
+
+	for (var i = 0; i < [fills count]; i++) {
+		if ([[fills objectAtIndex:i] fillType] == 0 && [[fills objectAtIndex:i] isEnabled]) {
+			fillObj = [fills objectAtIndex:i];
+		}
+	}
+
 	var bgColor = [fillObj color];
 
 	//Calculate new inverted color
@@ -20,7 +28,4 @@ if (fills) {
 	[bgColor setRed:newR];
 	[bgColor setGreen:newG];
 	[bgColor setBlue:newB];
-
-	//Force a redraw
-	[layer markLayerDirty];
 }
