@@ -4,7 +4,7 @@ var layersToSync = 0;
 var syncedLayers = 0;
 
 for (var i = 0; i < [allLayers length]; i++) {
-	var layer = allLayers[i];
+	var layer = [allLayers objectAtIndex:i];
 
 	//If the layer is linked and is definitely a image layer
 	if ([layer class] === MSBitmapLayer) {
