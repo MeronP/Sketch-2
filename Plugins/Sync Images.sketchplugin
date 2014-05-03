@@ -3,7 +3,7 @@ var allLayers = [[doc currentPage] layers];
 var layersToSync = 0;
 var syncedLayers = 0;
 
-for (var i = 0; i < [allLayers length]; i++) {
+for (var i = 0; i < [allLayers count]; i++) {
 	var layer = [allLayers objectAtIndex:i];
 
 	//If the layer is linked and is definitely a image layer
@@ -15,7 +15,7 @@ for (var i = 0; i < [allLayers length]; i++) {
 
 		var fileManager = [NSFileManager defaultManager];
 		if ([fileManager fileExistsAtPath:imagePath]) {
-			//Replace old image with new image, if the layer's name (image path) exists
+			//Replace old image with new image, if the layer's name (ie. image path) exists
 			var newImage = [[NSImage alloc] initWithContentsOfFile:imagePath];
 
 			if (newImage) {
@@ -29,12 +29,17 @@ for (var i = 0; i < [allLayers length]; i++) {
 					[layerFrame setConstrainProportions: true];
 				}
 
-				[layer setImage:newImage];
+				try {
+					var imgData = [[MSImageData alloc] init];
+					[imgData setImage:newImage];
+
+					[layer setImage:imgData];
+				} catch(e) {
+					log(e);
+				}
 
 				syncedLayers++;
 			}
-		} else {
-			[doc showMessage:"Failed to sync image: "+imagePath];
 		}
 	}
 }
