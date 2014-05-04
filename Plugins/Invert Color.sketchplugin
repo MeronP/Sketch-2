@@ -17,15 +17,17 @@ if (fills) {
 		}
 	}
 
-	var bgColor = [fillObj color];
+	if (fillObj) {
+		var bgColor = [fillObj color];
 
-	//Calculate new inverted color
-	var newR = (1-[bgColor red]);
-	var newG = (1-[bgColor green]);
-	var newB = (1-[bgColor blue]);
+		//Calculate new inverted color
+		var newR = (1-[bgColor red]);
+		var newG = (1-[bgColor green]);
+		var newB = (1-[bgColor blue]);
 
-	//Set the color
-	[bgColor setRed:newR];
-	[bgColor setGreen:newG];
-	[bgColor setBlue:newB];
+		//Set the color
+		[bgColor setRed:newR];
+		[bgColor setGreen:newG];
+		[bgColor setBlue:newB];
+	}
 }

@@ -12,7 +12,6 @@ Resources and Plugins for Sketch by Bohemian Coding.
 	* Fill Artboard
 	* Invert Color
 	* Remove Fills and Borders
-	* Sync Images (syncs image layers which are named the same as the original image file - an image layer named "A Folder/My Image.jpg" will be updated to match the latest copy of the image file)
 * Resources
 	* Devices
 		* Androids
@@ -24,7 +23,7 @@ Resources and Plugins for Sketch by Bohemian Coding.
 		* Mac UI Design (window)
 		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and example file)
 	* Framer
-		* "AppTemplate" (iOS UI template with [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js))
+		* "AppTemplate" (Useful [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js), and iOS UI template)
 
 ##License
 

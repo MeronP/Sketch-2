@@ -1,7 +1,9 @@
+var Sketch = PSD
+
 //// Utility functions ////
 
 isWebApp = function() {
-	return window.navigator.standalone;
+	return window.navigator.standalone
 }
 
 setTimeSpeed = function(newSpeed) {
@@ -9,10 +11,10 @@ setTimeSpeed = function(newSpeed) {
 }
 
 refreshStatusBarTime = function() {
-	currentDate = new Date();
-	hours = currentDate.getHours();
-	hours = hours % 12;
-	hours = hours ? hours : 12;
+	currentDate = new Date()
+	hours = currentDate.getHours()
+	hours = hours % 12
+	hours = hours ? hours : 12
 	statusBarTime.html = hours+":"+(currentDate.getMinutes()<10?'0':'') + currentDate.getMinutes()+(currentDate.getHours()>=12? " PM" : " AM")
 }
 
@@ -99,7 +101,7 @@ showAlert = function(title, message) {
 //// Variables ////
 
 //Important pointer type variable (click or touch)
-pointerType = "click";
+pointerType = "click"
 
 //Possible values: linear, ease-in, ease-out, cubic-bezier(0.25,0,0.75,1), spring(100,50,250)
 animationCurve = "spring(100,20,1200)"
@@ -110,28 +112,28 @@ statusBarTime = null
 //// Custom Functions, actions ////
 
 showSecondScreen = function() {
-	PSD.Second_Screen.animate({
-    	properties: { y: PSD.Status_Bar.height },
+	Sketch.Second_Screen.animate({
+    	properties: { y: Sketch.Status_Bar.height },
     	curve: animationCurve
   	})
 }
 
 hideSecondScreen = function() {
-	PSD.Second_Screen.animate({
-    	properties: { y: PSD.Main_Screen.height },
+	Sketch.Second_Screen.animate({
+    	properties: { y: Sketch.Main_Screen.height },
     	curve: animationCurve
   	})
 }
 
-PSD.Button.on(pointerType, function() {
+Sketch.Button.on(pointerType, function() {
 	showSecondScreen()
 })
 
-PSD.Back_Button.on(pointerType, function() {
+Sketch.Back_Button.on(pointerType, function() {
 	hideSecondScreen()
 })
 
-PSD.First_Tab.on(pointerType, function() {
+Sketch.First_Tab.on(pointerType, function() {
 	showAlert("First tab pressed", "Proin quis tortor orci. Etiam at risus et justo dignissim congue.")
 })
 
@@ -142,29 +144,29 @@ start = function() {
 	iPhoneScreen.style.overflow = "hidden"
 	iPhoneScreen.style.background = "white"
 
-	PSD.Status_Bar.superView = iPhoneScreen
-	PSD.Main_Screen.superView = iPhoneScreen
-	PSD.Second_Screen.superView = iPhoneScreen
+	Sketch.Status_Bar.superView = iPhoneScreen
+	Sketch.Main_Screen.superView = iPhoneScreen
+	Sketch.Second_Screen.superView = iPhoneScreen
 
-	PSD.Status_Bar.placeBefore(PSD.Main_Screen)
-	PSD.Second_Screen.placeBefore(PSD.Main_Screen)
+	Sketch.Status_Bar.placeBefore(Sketch.Main_Screen)
+	Sketch.Second_Screen.placeBefore(Sketch.Main_Screen)
 
-	PSD.Nav_Bar.superView = PSD.Content
-	PSD.Tab_Bar.superView = PSD.Content
+	Sketch.Nav_Bar.superView = Sketch.Content
+	Sketch.Tab_Bar.superView = Sketch.Content
 
-	PSD.Second_Nav_Bar.superView = PSD.Second_Content
-	PSD.Second_Tab_Bar.superView = PSD.Second_Content
+	Sketch.Second_Nav_Bar.superView = Sketch.Second_Content
+	Sketch.Second_Tab_Bar.superView = Sketch.Second_Content
 
 
 	if (utils.isTouch()) {
-		pointerType = "touchstart";
+		pointerType = "touchstart"
 	}
 
 
 	// Don't show status bar for web apps, touchscreen mobiles
 	if (isWebApp() || (utils.isMobile() && utils.isTouch())) {
-		PSD.Status_Bar.style.display = "none"
-		PSD["Content"].y -= 40
+		Sketch.Status_Bar.style.display = "none"
+		Sketch["Content"].y -= 40
 	} else {
 		//Setup time in status bar
 		statusBarTime = new View({ x:268, y:4, width:115, height:34 })
@@ -179,8 +181,8 @@ start = function() {
 	}
 
 
-	PSD.Second_Screen.x  = 0
-	PSD.Second_Screen.y = PSD.Main_Screen.height
+	Sketch.Second_Screen.x  = 0
+	Sketch.Second_Screen.y = Sketch.Main_Screen.height
 }
 
 
