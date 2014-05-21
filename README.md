@@ -31,4 +31,4 @@ Resources and Plugins for Sketch by Bohemian Coding.
 
 ===
 
-<a href="https://gist.github.com/bomberstudios/7694497">Other useful plugins & resources for Sketch...</a>
+<a href="https://github.com/sketchplugins/plugin-directory">The full Sketch plugin directory...</a>
