@@ -21,7 +21,7 @@ A few resources and plugins for [Sketch](http://bohemiancoding.com/sketch/).
 	* Templates
 		* Android App Icon
 		* Mac UI Design (window)
-		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and angi example file)
+		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and an example file)
 	* Framer
 		* "AppTemplate" (Useful [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js), and iOS UI template)
 
