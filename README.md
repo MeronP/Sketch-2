@@ -10,7 +10,7 @@ A few resources and plugins for [Sketch](http://bohemiancoding.com/sketch/).
 
 * Plugins
 	* Fill Artboard
-	* Invert Color
+	* Invert Background Color
 	* Remove Fills and Borders
 * Resources
 	* Devices

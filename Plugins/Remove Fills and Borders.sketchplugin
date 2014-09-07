@@ -6,12 +6,12 @@ var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
 var fills = [[layer style] fills];
 
 for (var i = 0; i < [fills count]; i++) {
-	[fills removeStylePartAtIndex:0];
+    [fills removeStylePartAtIndex:0];
 }
 
 //Remove all borders
 var borders = [[layer style] borders];
 
 for (var i = 0; i < [borders count]; i++) {
-	[borders removeStylePartAtIndex:0];
+    [borders removeStylePartAtIndex:0];
 }

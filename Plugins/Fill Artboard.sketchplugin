@@ -1,4 +1,5 @@
 //(control f)
+//Expands a layer to fill (cover) an artboard
 //Useful to use a layer as a solid background fill
 
 var layer = selection[0];
@@ -15,8 +16,5 @@ var artboard = [[doc currentPage] currentArtboard] || [doc currentPage];
 var borders = [[layer style] borders];
 
 for (var i = 0; i < [borders count]; i++) {
-	[borders removeStylePartAtIndex:0];
+    [borders removeStylePartAtIndex:0];
 }
-
-//Set the layer's name
-[layer setName:"Background"];
