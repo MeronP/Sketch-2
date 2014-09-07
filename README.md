@@ -1,10 +1,10 @@
 ##About
 
-Resources and Plugins for Sketch by Bohemian Coding.
+A few resources and plugins for [Sketch](http://bohemiancoding.com/sketch/).
 
-* Templates should be moved to `~/Library/Application Support/sketch/Templates/` , and will then be accessible from `File > New from Template`
-
-* Plugins should be moved to `~/Library/Application Support/sketch/Plugins/` , and will then be accessible from the `Plugins` menu
+* Move any templates or plugins you wish to use to the appropriate Sketch folders:
+	* `File` > `New From Template` > `Reveal in Finder` will open your Templates folder
+	* `Plugins` > `Reveal Plugins Folder...` will open your Plugins folder
 
 ##Contents
 
@@ -21,7 +21,7 @@ Resources and Plugins for Sketch by Bohemian Coding.
 	* Templates
 		* Android App Icon
 		* Mac UI Design (window)
-		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and example file)
+		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and angi example file)
 	* Framer
 		* "AppTemplate" (Useful [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js), and iOS UI template)
 
