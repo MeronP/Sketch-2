@@ -1,33 +1,18 @@
 ##About
 
-A few resources and plugins for [Sketch](http://bohemiancoding.com/sketch/).
+This repository has been broken up into a few others now..
 
-* Move any templates or plugins you wish to use to the appropriate Sketch folders:
-	* `File` > `New From Template` > `Reveal in Finder` will open your Templates folder
-	* `Plugins` > `Reveal Plugins Folder...` will open your Plugins folder
+* [Plugins](https://github.com/sebj/Sketch-Plugins)
+* [Devices](https://github.com/sebj/Sketch-Devices)
+    - rMBP
+    - iMac
+    - iPhone 5c (all colours)
+* [Pebble Templates](https://github.com/sebj/Sketch-Pebble-Templates)
+    - UI element symbols
+    - (Flat) stainless steel and matte black Pebble Steel bodies
+* [Framer iOS Template](https://github.com/sebj/Sketch-Framer-iOS-Template)
 
-##Contents
-
-* Plugins
-	* Fill Artboard
-	* Invert Background Color
-	* Remove Fills and Borders
-* Resources
-	* Devices
-		* Androids
-		* iMac
-		* iPhone 5c
-		* MacBook Pro with Retina Display
-	* Templates
-		* Android App Icon
-		* Mac UI Design (window)
-		* [Pebble](https://getpebble.com) (app or watchface; comes with both Pebble Steel bodies, and an example file)
-	* Framer
-		* "AppTemplate" (Useful [FramerJS code](https://github.com/sebj/Sketch/blob/master/Resources/Framer/AppTemplate/app.js), and iOS UI template)
-
-##License
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+[![Gittip](http://img.shields.io/gratipay/sebj.svg)](https://gratipay.com/sebj/)
 
 ===
 
