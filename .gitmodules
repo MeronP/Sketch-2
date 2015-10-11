@@ -7,6 +7,3 @@
 [submodule "Sketch-Pebble-Templates"]
 	path = Sketch-Pebble-Templates
 	url = https://github.com/sebj/Sketch-Pebble-Templates
-[submodule "Sketch-Framer-iOS-Template"]
-	path = Sketch-Framer-iOS-Template
-	url = https://github.com/sebj/Sketch-Framer-iOS-Template
