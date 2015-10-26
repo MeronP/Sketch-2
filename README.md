@@ -5,5 +5,5 @@
 * [Pebble Templates](https://github.com/sebj/Sketch-Pebble-Templates)
 
 ===
-*[Official Sketch plugin directory...](http://www.sketchapp.com/plugins)
-*[Unofficial GitHub plugin directory...](https://github.com/sketchplugins/plugin-directory)*
+* [Official Sketch plugin directory...](http://www.sketchapp.com/plugins)
+* [Unofficial GitHub plugin directory...](https://github.com/sketchplugins/plugin-directory)
