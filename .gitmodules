@@ -1,9 +1,0 @@
-[submodule "Sketch-Plugins"]
-	path = Sketch-Plugins
-	url = https://github.com/sebj/Sketch-Plugins.git
-[submodule "Sketch-Devices"]
-	path = Sketch-Devices
-	url = https://github.com/sebj/Sketch-Devices
-[submodule "Sketch-Pebble-Templates"]
-	path = Sketch-Pebble-Templates
-	url = https://github.com/sebj/Sketch-Pebble-Templates
